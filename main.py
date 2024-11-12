@@ -26,6 +26,10 @@ path_texts = [path.text for path in path_elements]
 
 driver.quit()
 
+for i in range(len(path_texts)):
+    if "{resource}" in path_texts[i]:
+        path_texts[i] = path_texts[i].replace("{resource}", "colors")
+
 post_body = {
   "email": "eve.holt@reqres.in",
   "password": "cityslicka"
@@ -52,7 +56,7 @@ with open('data.csv', 'w', newline='', encoding='utf-8') as csvfile:
         if "{id}" in path_texts[i]:
             writer.writerow([method_texts[i], base_url + path_texts[i].replace("{id}", "1"), body, True])
             writer.writerow([method_texts[i], base_url + path_texts[i].replace("{id}", "0"), body, False])
-            continue  
+            continue 
         if method_texts[i] == "POST" and (path_texts[i] == "/login" or path_texts[i] == "/register"):
             writer.writerow([method_texts[i], base_url + path_texts[i], post_body, True])
             writer.writerow([method_texts[i], base_url + path_texts[i], post_body_noEmail, False])
