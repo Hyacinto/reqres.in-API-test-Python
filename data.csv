@@ -1,0 +1,26 @@
+Method,Path,Body,Result
+GET,https://reqres.in/api/{resource},,True
+GET,https://reqres.in/api/users,,True
+GET,https://reqres.in/api/users/1,,True
+GET,https://reqres.in/api/users/0,,False
+PUT,https://reqres.in/api/users/1,,True
+PUT,https://reqres.in/api/users/0,,False
+PATCH,https://reqres.in/api/users/1,,True
+PATCH,https://reqres.in/api/users/0,,False
+DELETE,https://reqres.in/api/users/1,,True
+DELETE,https://reqres.in/api/users/0,,False
+GET,https://reqres.in/api/{resource}/1,,True
+GET,https://reqres.in/api/{resource}/0,,False
+PUT,https://reqres.in/api/{resource}/1,,True
+PUT,https://reqres.in/api/{resource}/0,,False
+PATCH,https://reqres.in/api/{resource}/1,,True
+PATCH,https://reqres.in/api/{resource}/0,,False
+DELETE,https://reqres.in/api/{resource}/1,,True
+DELETE,https://reqres.in/api/{resource}/0,,False
+POST,https://reqres.in/api/login,"{'email': 'eve.holt@reqres.in', 'password': 'cityslicka'}",True
+POST,https://reqres.in/api/login,"{'email': '', 'password': 'cityslicka'}",False
+POST,https://reqres.in/api/login,"{'email': 'eve.holt@reqres.in', 'password': ''}",False
+POST,https://reqres.in/api/register,"{'email': 'eve.holt@reqres.in', 'password': 'cityslicka'}",True
+POST,https://reqres.in/api/register,"{'email': '', 'password': 'cityslicka'}",False
+POST,https://reqres.in/api/register,"{'email': 'eve.holt@reqres.in', 'password': ''}",False
+POST,https://reqres.in/api/logout,,True

@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
+import csv
 
 firefox_binary_path = r"C:\Program Files\Mozilla Firefox\Firefox.exe"
 
@@ -30,5 +31,33 @@ post_body = {
   "password": "cityslicka"
 }
 
+post_body_noEmail = {
+  "email": "",
+  "password": "cityslicka"
+}
+
+post_body_noPassword = {
+  "email": "eve.holt@reqres.in",
+  "password": ""
+}
+
+body = None
+
 base_url = "https://reqres.in/api"
 
+with open('data.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Method", "Path", "Body", "Result"])
+    for i in range(len(method_texts)):
+        if "{id}" in path_texts[i]:
+            writer.writerow([method_texts[i], base_url + path_texts[i].replace("{id}", "1"), body, True])
+            writer.writerow([method_texts[i], base_url + path_texts[i].replace("{id}", "0"), body, False])
+            continue  
+        if method_texts[i] == "POST" and (path_texts[i] == "/login" or path_texts[i] == "/register"):
+            writer.writerow([method_texts[i], base_url + path_texts[i], post_body, True])
+            writer.writerow([method_texts[i], base_url + path_texts[i], post_body_noEmail, False])
+            writer.writerow([method_texts[i], base_url + path_texts[i], post_body_noPassword, False])
+        else:
+            writer.writerow([method_texts[i], base_url + path_texts[i], body, True])
+
+   
