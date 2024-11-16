@@ -2,18 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
 import csv
 
-firefox_binary_path = r"C:\Program Files\Mozilla Firefox\Firefox.exe"
-
-options = Options()
-options.binary_location = firefox_binary_path
-
-service = Service('C:/geckodriver/geckodriver.exe')
-
-driver = webdriver.Firefox(service=service, options=options)
+driver = webdriver.Firefox() 
 driver.get('https://reqres.in/api-docs/#/')
 
 wait = WebDriverWait(driver, 5)
