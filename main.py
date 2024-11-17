@@ -2,10 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
 import csv
 
-driver = webdriver.Firefox() 
-driver.get('https://reqres.in/api-docs/#/')
+options = Options()
+options.headless = True
+
+driver = webdriver.Firefox(options=options)
+driver.get('https://reqres.in/api-docs#/')
 
 wait = WebDriverWait(driver, 5)
 
@@ -54,5 +58,6 @@ with open('data.csv', 'w', newline='', encoding='utf-8') as csvfile:
             writer.writerow([method_texts[i], base_url + path_texts[i], post_body_noPassword, False])
         else:
             writer.writerow([method_texts[i], base_url + path_texts[i], body, True])
+
 
    

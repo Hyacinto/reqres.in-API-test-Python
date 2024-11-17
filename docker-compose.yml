@@ -1,0 +1,17 @@
+services:
+  test-runner:
+    build: .
+    volumes:
+      - .:/app
+    command: ./start.sh
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  http-server:
+    image: python:3.10-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: python -m http.server 8080
+    ports:
+      - "8080:8080"

@@ -13,8 +13,11 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckod
 
 WORKDIR /app
 
-COPY main.py test_api.py requirements.txt ./
-
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD python main.py && pytest test_api.py --html=report.html && python -m webbrowser -t report.html
+COPY . /app
+
+
+
+
