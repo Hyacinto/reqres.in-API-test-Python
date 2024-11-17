@@ -13,7 +13,14 @@ This project is designed to run automated API tests using data scraped from a do
 
 ## Prerequisites
 
-Ensure you have [Docker](https://www.docker.com/) installed on your machine.
+Ensure you have [Docker](https://www.docker.com/) installed and running on your machine.
+
+1. Open a terminal.
+
+2. Clone the repository:
+   ```shell
+   git clone <repo_url>
+   cd <project_folder>
 
 ## How to Build and Run the Docker Containers
 
