@@ -2,6 +2,18 @@
 
 This project is designed to run automated API tests using data scraped from a documentation site. It automates generating a CSV file, runs HTTP tests based on this data, and creates an HTML report that can be viewed in a browser.
 
+## Built with
+
+Built with:
+-----------
+
+[![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+[![Pytest](https://img.shields.io/badge/Pytest-0A0A0A?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white)](https://www.mozilla.org/firefox/)
+
+
 ## Project Structure
 
 - `main.py:` Scrapes API documentation to extract HTTP methods and paths and generates `data.csv`.
@@ -13,7 +25,7 @@ This project is designed to run automated API tests using data scraped from a do
 
 ## Prerequisites
 
-Ensure you have [Docker](https://www.docker.com/) installed and running on your machine.
+Ensure you have Docker installed and running on your machine.
 
 1. Open a terminal.
 
